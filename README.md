@@ -39,14 +39,14 @@ Vidolimo SEO Auditor analyzes your content for SEO issues and provides actionabl
 3. Activate through the **Plugins** menu in WordPress
 4. Open the **Vidolimo SEO** menu to view the dashboard
 
-## 🚀 Usage
+## Usage
 
 1. **Dashboard**: View overall SEO scores and category breakdowns
 2. **Analyze Pages**: Click "Analyze" on any page to get detailed SEO recommendations
 3. **Review Issues**: Check identified issues organized by severity
 4. **Take Action**: Follow recommendations to improve your SEO
 
-## ❓ FAQ
+## FAQ
 
 ### How does the scoring system work?
 Each category has a 0-100 score. The overall score is a weighted average with higher weight for Content and Technical SEO.
@@ -88,8 +88,4 @@ This plugin is licensed under the [GPL v2 or later](https://www.gnu.org/licenses
 
 **Ardeshir Shojaei**  
 Website: [ardeshirshojaei.com](https://ardeshirshojaei.com)  
-GitHub: [@Ardesh1r](https://github.com/Ardesh1r)
 
----
-
-**Made with ❤️ for the WordPress community**
