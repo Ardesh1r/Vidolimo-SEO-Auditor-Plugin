@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1544 500" width="1544" height="500">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="1544" height="500" fill="url(#bgGradient)"/>
+  
+  <!-- Accent shape -->
+  <circle cx="1400" cy="100" r="150" fill="#00d4ff" opacity="0.1"/>
+  <circle cx="200" cy="450" r="120" fill="#00d4ff" opacity="0.1"/>
+  
+  <!-- Logo area -->
+  <g transform="translate(100, 150)">
+    <rect width="200" height="200" rx="20" fill="#00d4ff" opacity="0.1"/>
+    <text x="100" y="120" font-size="80" font-weight="bold" fill="#00d4ff" text-anchor="middle" font-family="Arial, sans-serif">V</text>
+  </g>
+  
+  <!-- Main text -->
+  <text x="380" y="140" font-size="64" font-weight="bold" fill="#ffffff" font-family="Arial, sans-serif">Vidolimo SEO</text>
+  <text x="380" y="220" font-size="64" font-weight="bold" fill="#ffffff" font-family="Arial, sans-serif">Auditor</text>
+  
+  <!-- Subtitle -->
+  <text x="380" y="280" font-size="28" fill="#00d4ff" font-family="Arial, sans-serif">Comprehensive WordPress SEO Analysis Tool</text>
+  
+  <!-- Features list -->
+  <text x="380" y="350" font-size="18" fill="#cccccc" font-family="Arial, sans-serif">✓ Content Analysis  ✓ Technical SEO  ✓ Performance</text>
+  <text x="380" y="390" font-size="18" fill="#cccccc" font-family="Arial, sans-serif">✓ Image Optimization  ✓ Link Analysis  ✓ Content Freshness</text>
+</svg>
