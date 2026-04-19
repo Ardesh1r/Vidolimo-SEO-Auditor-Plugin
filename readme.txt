@@ -1,6 +1,6 @@
 === Vidolimo SEO Auditor ===
 Contributors: ardesh1r
-Tags: seo, analysis, auditor, content, technical-seo
+Tags: seo, seo audit, seo checker, seo optimizer, content analysis
 Requires at least: 5.8
 Tested up to: 6.9
 Requires PHP: 7.4
@@ -8,11 +8,15 @@ Stable tag: 1.0.2
 License: GPL v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.txt
 
-Comprehensive WordPress SEO analysis tool. Analyze pages for SEO issues and get actionable recommendations for images, content, links, technical SEO, performance, and content freshness.
+Free WordPress SEO audit plugin. Analyze any page for SEO issues and get instant, actionable recommendations to boost your search rankings — no configuration needed.
 
 == Description ==
 
-Vidolimo SEO Auditor is a comprehensive WordPress SEO analysis tool that helps you identify and fix SEO issues on your website. The plugin analyzes your pages and provides actionable recommendations to improve your search engine rankings.
+**Vidolimo SEO Auditor** is a free, lightweight WordPress SEO analysis plugin that audits your pages and posts for SEO issues and gives you clear, actionable recommendations to improve your search engine rankings — all from inside your WordPress dashboard.
+
+Unlike bulky SEO plugins, Vidolimo SEO Auditor focuses purely on analysis: it reads your content, checks your technical setup, and tells you exactly what to fix. No bloat, no paywalls, no changes to your content.
+
+Perfect for bloggers, small business owners, and developers who want a fast, honest SEO audit tool.
 
 **Key Features:**
 
@@ -47,22 +51,35 @@ Or manually:
 == Frequently Asked Questions ==
 
 = How does the scoring system work? =
-Each category has a 0-100 score. The overall score is a weighted average with higher weight for Content and Technical SEO.
+Each category (Content, Technical, Links, Images, Performance, Freshness) has a 0-100 score. The overall score is a weighted average, giving higher weight to Content and Technical SEO.
 
 = Does this plugin make changes to my content? =
-No. Vidolimo SEO Auditor only analyzes and reports. It never modifies your content.
+No. Vidolimo SEO Auditor only analyzes and reports. It never modifies your content, settings, or database in any harmful way.
 
 = Will this slow down my site? =
-No. Analysis runs in the WordPress admin area only and doesn't affect frontend performance.
+No. All analysis runs inside the WordPress admin area only. It has zero impact on your frontend page load times or visitor experience.
 
 = Is this plugin free? =
-Yes! Vidolimo SEO Auditor is completely free and open source under GPL v2.
+Yes! Vidolimo SEO Auditor is completely free and open source under the GPL v2 license. No premium tiers, no upsells.
+
+= Does it work with any WordPress theme? =
+Yes. The plugin works independently of your theme and is compatible with all major page builders including Gutenberg, Elementor, and Divi.
+
+= Do I need any API keys or external accounts? =
+No. Everything runs locally inside your WordPress installation. No external API calls, no accounts, no data sent anywhere.
+
+= How is this different from Yoast SEO or Rank Math? =
+Yoast and Rank Math are content-writing assistants. Vidolimo SEO Auditor is a post-publish auditing tool — it analyzes your existing pages and tells you what SEO issues are already there, making them complementary tools.
+
+= How many pages can I analyze? =
+All of them. There is no limit on the number of pages or posts you can audit.
 
 == Screenshots ==
 
-1. Dashboard view with overall SEO scores
-2. Page analysis with detailed recommendations
-3. Category breakdown with actionable insights
+1. Main dashboard showing overall SEO score and category breakdowns
+2. Per-page SEO analysis with detailed issue list and severity levels
+3. Content and technical SEO recommendations with actionable fixes
+4. Image and link analysis results with optimization suggestions
 
 == Changelog ==
 
