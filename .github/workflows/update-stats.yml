@@ -14,7 +14,7 @@ jobs:
       
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
@@ -93,27 +93,15 @@ jobs:
 
       - name: Update README with Stats
         run: |
-          # Create a temporary file with updated stats
-          STARS="${{ steps.stats.outputs.stars }}"
-          FORKS="${{ steps.stats.outputs.forks }}"
-          WP_DOWNLOADS="${{ steps.stats.outputs.wp_downloads }}"
-          WP_INSTALLS="${{ steps.stats.outputs.wp_installs }}"
-          
-          # Update README badges with actual numbers
-          sed -i "s/GitHub Stars.*$/[![GitHub Stars](https:\/\/img.shields.io\/badge\/GitHub%20Stars-$STARS-yellow?style=flat)](https:\/\/github.com\/Ardesh1r\/Vidolimo-SEO-Auditor-Plugin\/stargazers)/g" README.md
-          sed -i "s/GitHub Forks.*$/[![GitHub Forks](https:\/\/img.shields.io\/badge\/GitHub%20Forks-$FORKS-blue?style=flat)](https:\/\/github.com\/Ardesh1r\/Vidolimo-SEO-Auditor-Plugin\/network\/members)/g" README.md
-          sed -i "s/WordPress.org Downloads.*$/[![WordPress.org Downloads](https:\/\/img.shields.io\/badge\/WP.org%20Downloads-$WP_DOWNLOADS-green?style=flat)](https:\/\/wordpress.org\/plugins\/vidolimo-seo-auditor\/)/g" README.md
-          sed -i "s/WordPress.org Active Installs.*$/[![WordPress.org Active Installs](https:\/\/img.shields.io\/badge\/Active%20Installs-$WP_INSTALLS-brightgreen?style=flat)](https:\/\/wordpress.org\/plugins\/vidolimo-seo-auditor\/)/g" README.md
+          # Note: README already has dynamic badges via shields.io
+          # This step is optional - we keep STATS.md as the source of truth
+          echo "Stats have been updated in STATS.md"
 
       - name: Commit and Push Stats
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           
-          if git diff --quiet; then
-            echo "No changes to commit"
-          else
-            git add README.md STATS.md
-            git commit -m "📊 Update repository statistics"
-            git push
-          fi
+          git add STATS.md
+          git commit -m "📊 Update repository statistics" || echo "No changes to commit"
+          git push || echo "Nothing to push"
