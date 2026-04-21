@@ -5,9 +5,7 @@
 [![Version](https://img.shields.io/badge/Version-1.0.2-green.svg)](https://github.com/Ardesh1r/Vidolimo-SEO-Auditor-Plugin/releases)
 [![WordPress.org](https://img.shields.io/badge/WordPress.org-Live-brightgreen.svg)](https://wordpress.org/plugins/vidolimo-seo-auditor/)
 
-**📊 Stats:**
 [![GitHub Stars](https://img.shields.io/github/stars/Ardesh1r/Vidolimo-SEO-Auditor-Plugin?style=flat&color=yellow)](https://github.com/Ardesh1r/Vidolimo-SEO-Auditor-Plugin/stargazers)
-[![GitHub Forks](https://img.shields.io/github/forks/Ardesh1r/Vidolimo-SEO-Auditor-Plugin?style=flat&color=blue)](https://github.com/Ardesh1r/Vidolimo-SEO-Auditor-Plugin/network/members)
 [![WordPress.org Downloads](https://img.shields.io/badge/dynamic/json?label=WP.org%20Downloads&query=downloaded&url=https://api.wordpress.org/plugins/info/1.0/vidolimo-seo-auditor.json&color=green)](https://wordpress.org/plugins/vidolimo-seo-auditor/)
 [![WordPress.org Active Installs](https://img.shields.io/badge/dynamic/json?label=Active%20Installs&query=active_installations&url=https://api.wordpress.org/plugins/info/1.0/vidolimo-seo-auditor.json&color=brightgreen)](https://wordpress.org/plugins/vidolimo-seo-auditor/)
 
