@@ -5,6 +5,10 @@
 [![Version](https://img.shields.io/badge/Version-1.0.2-green.svg)](https://github.com/Ardesh1r/Vidolimo-SEO-Auditor-Plugin/releases)
 [![WordPress.org](https://img.shields.io/badge/WordPress.org-Live-brightgreen.svg)](https://wordpress.org/plugins/vidolimo-seo-auditor/)
 
+![GitHub Downloads](https://img.shields.io/github/downloads/Ardesh1r/Vidolimo-SEO-Auditor-Plugin/total?style=flat-square)
+![GitHub Stars](https://img.shields.io/github/stars/Ardesh1r/Vidolimo-SEO-Auditor-Plugin?style=flat-square)
+![GitHub Forks](https://img.shields.io/github/forks/Ardesh1r/Vidolimo-SEO-Auditor-Plugin?style=flat-square)
+
 > Comprehensive WordPress SEO analysis tool. Analyze pages for SEO issues and get actionable recommendations.
 
 ## Overview
