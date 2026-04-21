@@ -1,0 +1,93 @@
+name: Update Repository Stats
+
+on:
+  schedule:
+    # Run daily at 00:00 UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Get GitHub Insights Data
+        id: stats
+        run: |
+          # Get repository stats using GitHub API
+          REPO_DATA=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            https://api.github.com/repos/Ardesh1r/Vidolimo-SEO-Auditor-Plugin)
+          
+          STARS=$(echo $REPO_DATA | jq '.stargazers_count')
+          FORKS=$(echo $REPO_DATA | jq '.forks_count')
+          WATCHERS=$(echo $REPO_DATA | jq '.watchers_count')
+          
+          echo "stars=$STARS" >> $GITHUB_OUTPUT
+          echo "forks=$FORKS" >> $GITHUB_OUTPUT
+          echo "watchers=$WATCHERS" >> $GITHUB_OUTPUT
+          
+          # Get WordPress.org plugin stats
+          WP_DATA=$(curl -s https://api.wordpress.org/plugins/info/1.0/vidolimo-seo-auditor.json)
+          
+          WP_DOWNLOADS=$(echo $WP_DATA | jq '.downloaded')
+          WP_INSTALLS=$(echo $WP_DATA | jq '.active_installations')
+          WP_RATING=$(echo $WP_DATA | jq '.rating')
+          WP_RATINGS=$(echo $WP_DATA | jq '.num_ratings')
+          
+          echo "wp_downloads=$WP_DOWNLOADS" >> $GITHUB_OUTPUT
+          echo "wp_installs=$WP_INSTALLS" >> $GITHUB_OUTPUT
+          echo "wp_rating=$WP_RATING" >> $GITHUB_OUTPUT
+          echo "wp_ratings=$WP_RATINGS" >> $GITHUB_OUTPUT
+
+      - name: Create Stats File
+        run: |
+          cat > STATS.md << 'EOF'
+          # Repository Statistics
+          
+          Last updated: $(date -u +'%Y-%m-%d %H:%M:%S UTC')
+          
+          ## GitHub Stats
+          - ⭐ Stars: ${{ steps.stats.outputs.stars }}
+          - 🍴 Forks: ${{ steps.stats.outputs.forks }}
+          - 👁️ Watchers: ${{ steps.stats.outputs.watchers }}
+          
+          ## WordPress.org Stats
+          - 📥 Total Downloads: ${{ steps.stats.outputs.wp_downloads }}
+          - 🚀 Active Installs: ${{ steps.stats.outputs.wp_installs }}
+          - ⭐ Rating: ${{ steps.stats.outputs.wp_rating }}/100
+          - 📊 Number of Ratings: ${{ steps.stats.outputs.wp_ratings }}
+          EOF
+
+      - name: Update README with Stats
+        run: |
+          # Create a temporary file with updated stats
+          STARS="${{ steps.stats.outputs.stars }}"
+          FORKS="${{ steps.stats.outputs.forks }}"
+          WP_DOWNLOADS="${{ steps.stats.outputs.wp_downloads }}"
+          WP_INSTALLS="${{ steps.stats.outputs.wp_installs }}"
+          
+          # Update README badges with actual numbers
+          sed -i "s/GitHub Stars.*$/[![GitHub Stars](https:\/\/img.shields.io\/badge\/GitHub%20Stars-$STARS-yellow?style=flat)](https:\/\/github.com\/Ardesh1r\/Vidolimo-SEO-Auditor-Plugin\/stargazers)/g" README.md
+          sed -i "s/GitHub Forks.*$/[![GitHub Forks](https:\/\/img.shields.io\/badge\/GitHub%20Forks-$FORKS-blue?style=flat)](https:\/\/github.com\/Ardesh1r\/Vidolimo-SEO-Auditor-Plugin\/network\/members)/g" README.md
+          sed -i "s/WordPress.org Downloads.*$/[![WordPress.org Downloads](https:\/\/img.shields.io\/badge\/WP.org%20Downloads-$WP_DOWNLOADS-green?style=flat)](https:\/\/wordpress.org\/plugins\/vidolimo-seo-auditor\/)/g" README.md
+          sed -i "s/WordPress.org Active Installs.*$/[![WordPress.org Active Installs](https:\/\/img.shields.io\/badge\/Active%20Installs-$WP_INSTALLS-brightgreen?style=flat)](https:\/\/wordpress.org\/plugins\/vidolimo-seo-auditor\/)/g" README.md
+
+      - name: Commit and Push Stats
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          
+          if git diff --quiet; then
+            echo "No changes to commit"
+          else
+            git add README.md STATS.md
+            git commit -m "📊 Update repository statistics"
+            git push
+          fi
