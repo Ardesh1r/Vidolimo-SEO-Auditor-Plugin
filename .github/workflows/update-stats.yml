@@ -33,6 +33,26 @@ jobs:
           echo "forks=$FORKS" >> $GITHUB_OUTPUT
           echo "watchers=$WATCHERS" >> $GITHUB_OUTPUT
           
+          # Get GitHub Insights: Clones (last 14 days)
+          CLONES_DATA=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            https://api.github.com/repos/Ardesh1r/Vidolimo-SEO-Auditor-Plugin/traffic/clones)
+          
+          TOTAL_CLONES=$(echo $CLONES_DATA | jq '[.clones[].count] | add // 0')
+          UNIQUE_CLONERS=$(echo $CLONES_DATA | jq '[.clones[].uniques] | add // 0')
+          
+          echo "total_clones=$TOTAL_CLONES" >> $GITHUB_OUTPUT
+          echo "unique_cloners=$UNIQUE_CLONERS" >> $GITHUB_OUTPUT
+          
+          # Get GitHub Insights: Views (last 14 days)
+          VIEWS_DATA=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            https://api.github.com/repos/Ardesh1r/Vidolimo-SEO-Auditor-Plugin/traffic/views)
+          
+          TOTAL_VIEWS=$(echo $VIEWS_DATA | jq '[.views[].count] | add // 0')
+          UNIQUE_VISITORS=$(echo $VIEWS_DATA | jq '[.views[].uniques] | add // 0')
+          
+          echo "total_views=$TOTAL_VIEWS" >> $GITHUB_OUTPUT
+          echo "unique_visitors=$UNIQUE_VISITORS" >> $GITHUB_OUTPUT
+          
           # Get WordPress.org plugin stats
           WP_DATA=$(curl -s https://api.wordpress.org/plugins/info/1.0/vidolimo-seo-auditor.json)
           
@@ -53,10 +73,16 @@ jobs:
           
           Last updated: $(date -u +'%Y-%m-%d %H:%M:%S UTC')
           
-          ## GitHub Stats
+          ## GitHub Stats (Overall)
           - ⭐ Stars: ${{ steps.stats.outputs.stars }}
           - 🍴 Forks: ${{ steps.stats.outputs.forks }}
           - 👁️ Watchers: ${{ steps.stats.outputs.watchers }}
+          
+          ## GitHub Insights (Last 14 Days)
+          - 📥 Clones: ${{ steps.stats.outputs.total_clones }}
+          - 👤 Unique Cloners: ${{ steps.stats.outputs.unique_cloners }}
+          - 👀 Total Views: ${{ steps.stats.outputs.total_views }}
+          - 👥 Unique Visitors: ${{ steps.stats.outputs.unique_visitors }}
           
           ## WordPress.org Stats
           - 📥 Total Downloads: ${{ steps.stats.outputs.wp_downloads }}
