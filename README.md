@@ -5,9 +5,11 @@
 [![Version](https://img.shields.io/badge/Version-1.0.2-green.svg)](https://github.com/Ardesh1r/Vidolimo-SEO-Auditor-Plugin/releases)
 [![WordPress.org](https://img.shields.io/badge/WordPress.org-Live-brightgreen.svg)](https://wordpress.org/plugins/vidolimo-seo-auditor/)
 
-![GitHub Downloads](https://img.shields.io/github/downloads/Ardesh1r/Vidolimo-SEO-Auditor-Plugin/total?style=flat-square)
-![GitHub Stars](https://img.shields.io/github/stars/Ardesh1r/Vidolimo-SEO-Auditor-Plugin?style=flat-square)
-![GitHub Forks](https://img.shields.io/github/forks/Ardesh1r/Vidolimo-SEO-Auditor-Plugin?style=flat-square)
+**📊 Stats:**
+[![GitHub Stars](https://img.shields.io/github/stars/Ardesh1r/Vidolimo-SEO-Auditor-Plugin?style=flat&color=yellow)](https://github.com/Ardesh1r/Vidolimo-SEO-Auditor-Plugin/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/Ardesh1r/Vidolimo-SEO-Auditor-Plugin?style=flat&color=blue)](https://github.com/Ardesh1r/Vidolimo-SEO-Auditor-Plugin/network/members)
+[![WordPress.org Downloads](https://img.shields.io/badge/dynamic/json?label=WP.org%20Downloads&query=downloaded&url=https://api.wordpress.org/plugins/info/1.0/vidolimo-seo-auditor.json&color=green)](https://wordpress.org/plugins/vidolimo-seo-auditor/)
+[![WordPress.org Active Installs](https://img.shields.io/badge/dynamic/json?label=Active%20Installs&query=active_installations&url=https://api.wordpress.org/plugins/info/1.0/vidolimo-seo-auditor.json&color=brightgreen)](https://wordpress.org/plugins/vidolimo-seo-auditor/)
 
 > Comprehensive WordPress SEO analysis tool. Analyze pages for SEO issues and get actionable recommendations.
 
@@ -50,6 +52,31 @@ Vidolimo SEO Auditor analyzes your content for SEO issues and provides actionabl
 2. **Analyze Pages**: Click "Analyze" on any page to get detailed SEO recommendations
 3. **Review Issues**: Check identified issues organized by severity
 4. **Take Action**: Follow recommendations to improve your SEO
+
+## Understanding the Stats
+
+### GitHub Clones vs WordPress.org Installs
+
+**GitHub Clones** ≠ **WordPress.org Installs**
+
+- **GitHub Clones**: Developers downloading the source code to review, contribute, or fork the project
+  - Used by: Developers, contributors, people studying the code
+  - Includes: Forks, local development, testing
+  - **Not necessarily installed on live WordPress sites**
+
+- **WordPress.org Active Installs**: Actual WordPress sites running the plugin
+  - Used by: End users installing from WordPress.org plugin directory
+  - Includes: Only live installations on WordPress websites
+  - **The real metric for plugin adoption**
+
+**Example:**
+- 100 GitHub clones might include 10 developers testing, 20 people forking, 70 reviewing code
+- But only 30 of those might actually install it on their WordPress site
+- WordPress.org shows the 30 active installs (the real number)
+
+**Bottom line:** Watch **WordPress.org Active Installs** for true plugin adoption. GitHub clones are good for community interest, but WordPress.org installs are what matter for real usage.
+
+---
 
 ## FAQ
 
